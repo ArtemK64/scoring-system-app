@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+.article {
+    max-width: 1600px;
+    width: 100%;
+    color: #fff;
+    margin: 50px auto;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.125);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.article-background-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -10;
+}
+
+.article-points {
+    padding: 50px 0 0 0;
+    font-size:
+}
+
+.article .article-title {
+    font-size: 22px;
+    font-weight: 650;
+    margin-bottom: 7px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.article-points {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.article-content {
+    font-size: 18px;
+}
+
+.article-sources {
+    padding: 25px 0 10px 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.article-sources-content {
+    font-size: 15px;
+}

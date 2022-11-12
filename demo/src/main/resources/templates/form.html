@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <link href="../static/css/form.css" th:href="@{/css/form.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="form">
+        <video autoplay loop class="form-background-video" muted playsinline>
+            <source src="videos/background-video.mp4" type="video/mp4">
+        </video>
+        <div class="form-title">
+            Credit potential form
+        </div>
+        <form th:action="@{/form}" th:object="${creditScoring}" th:method="patch">
+            <div class="form-content">
+                <div class="form-field">
+                    <label>First name</label>
+                    <input type="text" th:field="*{firstName}" class="form-fields-input">
+                    <div style="color:red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+                </div>
+                <div class="form-field">
+                    <label>How old are you?</label>
+                    <input type="text" th:field="*{age}" class="form-fields-input">
+                    <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
+                </div>
+                <div class="form-field">
+                    <label>Are you married?</label>
+                    <input type="text" th:field="*{isMarried}" class="form-fields-input">
+                    <div style="color:red" th:if="${#fields.hasErrors('isMarried')}" th:errors="*{isMarried}"></div>
+                </div>
+                <div class="form-field">
+                    <label>Did you take credit before?</label>
+                    <input type="text" th:field="*{hadCreditBefore}" class="form-fields-input">
+                    <div style="color:red" th:if="${#fields.hasErrors('hadCreditBefore')}" th:errors="*{hadCreditBefore}"></div>
+                </div>
+                <div class="form-field">
+                    <label>How much work experience do you have?</label>
+                    <input type="text" th:field="*{workExperience}" class="form-fields-input">
+                    <div style="color:red" th:if="${#fields.hasErrors('workExperience')}" th:errors="*{workExperience}"></div>
+                </div>
+                <div class="form-field">
+                    <label>Do you have a car?</label>
+                    <input type="text" th:field="*{haveCar}" class="form-fields-input">
+                    <div style="color:red" th:if="${#fields.hasErrors('haveCar')}" th:errors="*{haveCar}"></div>
+                </div>
+                <div class="form-field">
+                    <label>What kind of education do you have (school, college, university)?</label>
+                    <input type="text" th:field="*{education}" class="form-fields-input">
+                    <div style="color:red" th:if="${#fields.hasErrors('education')}" th:errors="*{education}"></div>
+                </div>
+                <div class="form-field">
+                    <input type="submit" value="Show results" class="form-input-button">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

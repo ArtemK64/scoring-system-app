@@ -1,10 +1,14 @@
 package ru.scoring_system.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.*;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CreditScoring {
     @NotEmpty(message = "Name should not be empty")
     @Size(min = 2, max = 30, message = "Name should be between 2 and 30 characters")
@@ -33,18 +37,6 @@ public class CreditScoring {
 
     @NotEmpty(message = "Education should not be empty")
     private String education;
-
-    CreditScoring(String firstName, Integer age, String isMarried, String hadCreditBefore, Integer workExperience, String haveCar, String education) {
-        this.firstName = firstName;
-        this.age = age;
-        this.isMarried = isMarried;
-        this.hadCreditBefore = hadCreditBefore;
-        this.workExperience = workExperience;
-        this.haveCar = haveCar;
-        this.education = education;
-    }
-
-    public CreditScoring() {}
 
     private int educationScoring(CreditScoring creditScoring) {
         switch (creditScoring.getEducation().toLowerCase()) {

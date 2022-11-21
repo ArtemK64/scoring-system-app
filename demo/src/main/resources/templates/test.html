@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link href="../static/css/test.css" th:href="@{/css/test.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="form">
+    <video autoplay loop class="form-background-video" muted playsinline>
+        <source src="videos/background-video.mp4" type="video/mp4">
+    </video>
+    <div class="form-title">
+        Test
+    </div>
+    <form th:action="@{/test}" th:object="${test}" th:method="patch">
+        <div class="form-content">
+            <div class="form-field">
+                <label>What should you do to educate yourself in financial way?</label>
+                <div class="form-field-content">A. Start to learn about personal finances</div>
+                <div class="form-field-content">B. Save money</div>
+                <div class="form-field-content">C. Ignore it</div>
+                <input type="text" th:field="*{firstAns}" class="form-fields-input">
+                <div style="color:red" th:if="${#fields.hasErrors('firstAns')}" th:errors="*{firstAns}"></div>
+            </div>
+            <div class="form-field">
+                <label>How to monitor your finances?</label>
+                <div class="form-field-content">A. Ignore you expenses</div>
+                <div class="form-field-content">B. Try to earn more</div>
+                <div class="form-field-content">C. Make a plan, a budget of your finances</div>
+                <input type="text" th:field="*{secondAns}" class="form-fields-input">
+                <div style="color:red" th:if="${#fields.hasErrors('secondAns')}" th:errors="*{secondAns}"></div>
+            </div>
+            <div class="form-field">
+                <label>How can you pay your debts?</label>
+                <div class="form-field-content">A. Start your own business</div>
+                <div class="form-field-content">B. Use savings for emergencies</div>
+                <div class="form-field-content">C. Create a strategy to reduce debts</div>
+                <input type="text" th:field="*{thirdAns}" class="form-fields-input">
+                <div style="color:red" th:if="${#fields.hasErrors('thirdAns')}" th:errors="*{thirdAns}"></div>
+            </div>
+            <div class="form-field">
+                <label>How should you save money?</label>
+                <div class="form-field-content">A. Make a wish</div>
+                <div class="form-field-content">B. Start investing in something</div>
+                <div class="form-field-content">C. Buy a new car</div>
+                <input type="text" th:field="*{fourthAns}" class="form-fields-input">
+                <div style="color:red" th:if="${#fields.hasErrors('fourthAns')}" th:errors="*{fourthAns}"></div>
+            </div>
+            <div class="form-field">
+                <label>Should you use the emergency budget?</label>
+                <div class="form-field-content">A. No</div>
+                <div class="form-field-content">B. Yes</div>
+                <div class="form-field-content">C. Sometimes</div>
+                <input type="text" th:field="*{fifthAns}" class="form-fields-input">
+                <div style="color:red" th:if="${#fields.hasErrors('fifthAns')}" th:errors="*{fifthAns}"></div>
+            </div>
+            <div class="form-field">
+                <input type="submit" value="Submit answers" class="form-input-button">
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
